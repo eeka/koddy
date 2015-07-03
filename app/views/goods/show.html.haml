@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @good.name
+%p
+  %b Price:
+  = @good.price
+%p
+  %b Category:
+  = @good.category_id
+%p
+  %b Description:
+  = @good.description
+%p
+  %b Photo:
+  = @good.photo
+
+= link_to 'Edit', edit_good_path(@good)
+\|
+= link_to 'Back', goods_path

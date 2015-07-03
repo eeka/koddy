@@ -1,0 +1,29 @@
+%h1 Listing goods
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Price
+      %th Category
+      %th Description
+      %th Photo
+      %th
+      %th
+      %th
+
+  %tbody
+    - @goods.each do |good|
+      %tr
+        %td= good.name
+        %td= good.price
+        %td= good.category_id
+        %td= good.description
+        %td= good.photo
+        %td= link_to 'Show', good
+        %td= link_to 'Edit', edit_good_path(good)
+        %td= link_to 'Destroy', good, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Good', new_good_path
